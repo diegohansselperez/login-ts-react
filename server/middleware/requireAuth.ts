@@ -28,7 +28,7 @@ export const requireAuth = (
           message: 'Unknown authorization',
         });
 
-      log(user);
+      req.user = user;
       next();
     });
   } catch (error) {}

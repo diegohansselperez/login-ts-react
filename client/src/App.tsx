@@ -1,5 +1,11 @@
+import LoginPage from './pages/LoginPage';
+
 const App = () => {
-  return <div>Hello World</div>;
+  return (
+    <div>
+      <LoginPage />
+    </div>
+  );
 };
 
 export default App;
