@@ -3,7 +3,7 @@ import { useAuthStore } from '../store/auth';
 
 const LoginPage = () => {
   const setToken = useAuthStore((state) => state.setToken);
-
+  const setProfile = useAuthStore((state) => state.setProfile);
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const email = (e.currentTarget.elements[0] as HTMLInputElement).value;
@@ -13,7 +13,7 @@ const LoginPage = () => {
     setToken(resLogin.data.token);
     const resProfile = await profileRequest();
 
-    console.log(resProfile);
+    setProfile(resProfile.data.profile);
   };
 
   return (
