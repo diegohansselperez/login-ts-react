@@ -4,6 +4,7 @@ import { create } from 'zustand';
 type State = {
   token: string;
   profile: null | object;
+  isAuth: boolean;
 };
 
 type Actions = {
@@ -16,9 +17,11 @@ export const useAuthStore = create(
     (set) => ({
       token: '',
       profile: null,
+      isAuth: false,
       setToken: (token: string) =>
         set((state) => ({
           token,
+          isAuth: true,
         })),
       setProfile: (profile: null | object) =>
         set((state) => ({
